@@ -58,8 +58,8 @@ services:
           memory: 64M
 
   grafana:
-    build:
-      context: ./grafana
+    image: ghcr.io/owebboy/grafana
+    build: ./grafana
     networks:
       - default
       - net
@@ -102,8 +102,8 @@ services:
         - traefik.http.services.swarmprom-grafana.loadbalancer.server.port=3000
 
   alertmanager:
-    build:
-      context: ./alertmanager
+    image: ghcr.io/owebboy/alertmanager
+    build: ./alertmanager
     networks:
       - default
       - net
@@ -170,8 +170,8 @@ services:
         - traefik.http.routers.swarmprom-unsee-https.middlewares=swarmprom-unsee-auth
 
   node-exporter:
-    build:
-      context: ./node-exporter
+    image: ghcr.io/owebboy/node-exporter
+    build: ./node-exporter
     networks:
       - net
     environment:
@@ -196,7 +196,8 @@ services:
           memory: 64M
 
   prometheus:
-    image: ./prometheus
+    image: ghcr.io/owebboy/prometheus
+    build: ./prometheus
     networks:
       - default
       - net
