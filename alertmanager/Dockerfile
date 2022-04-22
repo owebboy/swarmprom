@@ -1,4 +1,4 @@
-FROM prom/alertmanager:v0.15.3
+FROM prom/alertmanager
 
 COPY conf /etc/alertmanager/
 
