@@ -1,31 +1,22 @@
 :9090 {
-    basicauth / {$ADMIN_USER} {$ADMIN_PASSWORD}
-    reverse_proxy prometheus:9090
-
-    errors stderr
-    tls off
+	basicauth / {$ADMIN_USER} {$ADMIN_PASSWORD}
+	reverse_proxy prometheus:9090
+	tls internal
 }
 
 :9093 {
-    basicauth / {$ADMIN_USER} {$ADMIN_PASSWORD}
-    reverse_proxy alertmanager:9093
-
-    errors stderr
-    tls off
+	basicauth / {$ADMIN_USER} {$ADMIN_PASSWORD}
+	reverse_proxy alertmanager:9093
+	tls internal
 }
 
 :9094 {
-    basicauth / {$ADMIN_USER} {$ADMIN_PASSWORD}
-    reverse_proxy unsee:8080
-
-    errors stderr
-    tls off
+	basicauth / {$ADMIN_USER} {$ADMIN_PASSWORD}
+	reverse_proxy unsee:8080
+	tls internal
 }
 
 :3000 {
-    reverse_proxy grafana:3000
-
-    errors stderr
-    tls off
+	reverse_proxy grafana:3000
+	tls internal
 }
-
