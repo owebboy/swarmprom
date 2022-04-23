@@ -62,7 +62,6 @@ services:
     image: ghcr.io/owebboy/grafana
     build: ./grafana
     networks:
-      - default
       - net
       - traefik-public
     environment:
@@ -106,7 +105,6 @@ services:
     image: ghcr.io/owebboy/alertmanager
     build: ./alertmanager
     networks:
-      - default
       - net
       - traefik-public
     environment:
@@ -147,7 +145,6 @@ services:
   unsee:
     image: cloudflare/unsee:v0.8.0
     networks:
-      - default
       - net
       - traefik-public
     environment:
@@ -200,7 +197,6 @@ services:
     image: ghcr.io/owebboy/prometheus
     build: ./prometheus
     networks:
-      - default
       - net
       - traefik-public
     command:
