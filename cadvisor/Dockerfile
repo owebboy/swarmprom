@@ -34,3 +34,5 @@ HEALTHCHECK --interval=30s --timeout=3s \
   CMD wget --quiet --tries=1 --spider http://localhost:8080/healthz || exit 1
 
 ENTRYPOINT ["/usr/bin/cadvisor", "-logtostderr"]
+
+LABEL org.opencontainers.image.source https://github.com/owebboy/swarmprom
