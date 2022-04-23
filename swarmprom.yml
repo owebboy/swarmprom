@@ -6,6 +6,7 @@ networks:
     attachable: true
   traefik-public:
     external: true
+  default:
 
 volumes:
     prometheus: {}
